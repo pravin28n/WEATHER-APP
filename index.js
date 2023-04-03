@@ -7,6 +7,10 @@ const searchForm = document.querySelector("[data-searchForm]");
 const loadingScreen = document.querySelector(".loading-container");
 const userInfoContainer = document.querySelector(".user-info-container");
 
+const apiErrorImg = document.querySelector("[data-notFoundImg]");
+const apiErrorMessage = document.querySelector("[data-apiErrorText]");
+const apiErrorBtn = document.querySelector("[data-apiErrorBtn]");
+
 //initially vairables need????
 
 let oldTab = userTab;
@@ -82,7 +86,12 @@ async function fetchUserWeatherInfo(coordinates) {
     catch(err) {
         loadingScreen.classList.remove("active");
         //HW
-
+         // console.log("User - Api Fetch Error", error.message);
+    loadingScreen.classList.remove("active");
+    apiErrorContainer.classList.add("active");
+    apiErrorImg.style.display = "none";
+    apiErrorMessage.innerText = `Error: ${error?.message}`;
+    apiErrorBtn.addEventListener("click", fetchUserWeatherInfo);
     }
 
 }
@@ -120,6 +129,8 @@ function getLocation() {
     }
     else {
         //HW - show an alert for no gelolocation support available
+        grantAccessBtn.style.display = "none";
+    messageText.innerText = "Geolocation is not supported by this browser.";
     }
 }
 
@@ -166,5 +177,11 @@ async function fetchSearchWeatherInfo(city) {
     }
     catch(err) {
         //hW
+         // console.log("User - Api Fetch Error", error.message);
+    loadingScreen.classList.remove("active");
+    apiErrorContainer.classList.add("active");
+    apiErrorImg.style.display = "none";
+    apiErrorMessage.innerText = `Error: ${error?.message}`;
+    apiErrorBtn.addEventListener("click", fetchUserWeatherInfo);
     }
 }

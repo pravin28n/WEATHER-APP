@@ -12,6 +12,10 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
+
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon-16x16.png">
   </head>
   <body>
     <div class="wrapper">
@@ -19,11 +23,11 @@
       <div class="tab-container">
         <p class="tab" data-userWeather>Your Weather</p>
         <p class="tab" data-searchWeather>Search Weather</p>
-    </div>
+      </div>
 
       <div class="weather-container">
         <!-- grant location container -->
-        <div class=" sub-container grant-location-container">
+        <div class="sub-container grant-location-container">
           <img
             src="./images/location.png"
             width="80"
@@ -46,28 +50,28 @@
             />
           </button>
         </form>
-  
+
         <!-- loading screen container -->
         <div class="loading-container">
           <img src="./images/loading-loader.gif" width="150" height="150" />
           <!-- <p>loading</p> -->
         </div>
-  
+
         <!-- Show weather info -->
-        <div class=" sub-container user-info-container">
+        <div class="sub-container user-info-container">
           <!-- City name and flag -->
           <div class="name">
             <p data-cityName></p>
             <img data-countryIcon />
           </div>
-  
+
           <!-- Weather description -->
           <p data-weatherDesc></p>
           <!-- weather icon -->
           <img data-weatherIcon />
           <!-- temperature -->
           <p data-temp></p>
-  
+
           <!-- 3 cards - parameters -->
           <!-- card 1 -->
           <div class="parameter-container">
@@ -76,14 +80,14 @@
               <p>Windspeed</p>
               <p data-windspeed></p>
             </div>
-    
+
             <!-- card 2 -->
             <div class="parameter">
               <img src="./images/humidity.png" />
               <p>Humidity</p>
               <p data-humidity></p>
             </div>
-    
+
             <!-- card 3 -->
             <div class="parameter">
               <img src="./images/cloud.png" />
@@ -92,14 +96,24 @@
             </div>
           </div>
         </div>
+         <!-- handle api fetch error
+    <div class="sub-container api-error-container">
+      <img src="./images/not-found.png" data-notFoundImg />
+      <p data-apiErrorText></p>
+      <button class="btn" data-apiErrorBtn>Retry</button>
+    </div> -->
       </div>
-  
+      <div class="footerDiv">
+        <footer>
+          <!-- <p class="footer">&#169; Copyright by Pravin</p> -->     
+          <button class="  githubBtn">
+            <a href="" style="text-decoration: none; " >github repository</a>
+          </button>
+        </footer>
+      </div>
     </div>
 
-    
-   
-
-
     <script src="index.js"></script>
+   
   </body>
 </html>
